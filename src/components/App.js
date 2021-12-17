@@ -8,16 +8,16 @@ import Noteshow from "./Noteshow"
 
 function App(){
 
-    const [note,setNote] = useState([]);
+    const [notes,setNotes] = useState([]);
 
     function addNewNote(newNote){
-         setNote(prevNote =>{
+         setNotes(prevNote =>{
             return [...prevNote,newNote];
         });
     }
 
     function deleteNote(id){
-        setNote(prevNote =>{
+        setNotes(prevNote =>{
             return prevNote.filter((noteItem,index) => {
               return index!==id;
             });
@@ -28,7 +28,7 @@ function App(){
     return <div>
          <Header />
          <Form addNote={addNewNote} />
-         {note.map((noteItem, index) => {
+         {notes.map((noteItem, index) => {
         return (
           <Noteshow
             key={index}

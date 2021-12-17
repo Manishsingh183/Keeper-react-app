@@ -3,7 +3,7 @@ import React from "react";
 function Footer(){
    return <div class="footer_a">
 
-       made by @Manish
+      <p>made by @Manish</p> 
     </div> 
 }
 

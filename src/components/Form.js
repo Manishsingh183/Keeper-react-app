@@ -23,9 +23,15 @@ function Form(props){
 
     return <div>
          <form>
-           <input type="text" name="htitle"  placeholder="Title" value={note.htitle} onChange={handleChange} />
-           <textarea type="text" name="bcontent" placeholder="Take a note...." value={note.bcontent}  onChange={handleChange} rows="3"/>
-           <button type="submit" onClick={submitNote}>Create</button>
+           <input name="htitle"  
+                  placeholder="Title" 
+                  value={note.htitle} 
+                  onChange={handleChange} />
+           <textarea name="bcontent" 
+                     placeholder="Take a note...." 
+                     value={note.bcontent}  
+                     onChange={handleChange} />
+           <button onClick={submitNote}>Create</button>
          </form>
         </div>
 }
