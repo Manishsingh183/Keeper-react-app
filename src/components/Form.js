@@ -1,18 +1,20 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
-function Form(props){
+function Form(props) {
+  const [note, setNote] = useState({
+    htitle: "",
+    bcontent: ""
+  });
 
-    const [note,setNote] = useState({htitle:" ",bcontent: " "});
 
-
-    function handleChange(event){
+      function handleChange(event){
        const {value,name} = event.target;
        setNote(prevValue =>{
         return {...prevValue,[name]:value}
        });
     }
 
-    function submitNote(event){
+      function submitNote(event){
          props.addNote(note);
          setNote({
              htitle:"",
@@ -20,6 +22,7 @@ function Form(props){
          });
          event.preventDefault();
     }
+
 
     return <div>
          <form>
@@ -35,4 +38,5 @@ function Form(props){
          </form>
         </div>
 }
+
 export default Form;
